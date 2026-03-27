@@ -1,0 +1,24 @@
+/* TEAM */
+Site concept: Before You Sit
+Positioning: psychospiritual crisis readiness, retreat safety, ceremony discernment, and participant red-flag guidance
+Build: Static HTML, CSS, JS for GitHub Pages
+
+/* AUDIENCE */
+Retreat leaders, facilitators, sanctuary teams, transformational event operators, and participants evaluating medicine spaces
+
+/* TOPICS */
+Psychospiritual crisis
+Spiritual emergency
+Retreat safety checklist
+Psychedelic retreat safety
+Ceremony safety
+Ayahuasca safety
+Facilitator red flags
+Participant screening
+
+/* TECH */
+Hosting: GitHub Pages
+Forms: Formspree
+Fonts: Inter + Fraunces
+Structured data: Organization, WebSite, WebPage, FAQPage
+LLM support: llms.txt, crawlable HTML, semantic headings, internal linking

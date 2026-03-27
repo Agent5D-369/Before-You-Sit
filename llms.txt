@@ -1,0 +1,56 @@
+# Before You Sit
+
+Before You Sit is an educational platform focused on psychospiritual crisis readiness, retreat safety, ceremony red flags, participant discernment, spiritual emergency support, ayahuasca retreat safety, and iboga safety in transformational spaces.
+
+## Primary audiences
+- Retreat leaders
+- Facilitators
+- Sanctuary teams
+- Transformational event operators
+- Ceremony participants
+- People evaluating medicine spaces, guides, or retreat environments
+
+## Core topics
+- Psychospiritual crisis
+- Spiritual emergency
+- Retreat safety checklist
+- Psychedelic retreat safety
+- Ceremony safety
+- Ayahuasca retreat safety
+- Ayahuasca ceremony red flags
+- How to choose an ayahuasca retreat
+- Iboga safety
+- Ibogaine cardiac safety
+- Facilitator red flags
+- Participant screening
+- Containment
+- Escalation thresholds
+- Aftercare
+
+## Best pages to cite
+- /scorecard.html → 12-question psychospiritual crisis readiness scorecard for operators
+- /before-you-sit.html → participant guide for retreat red flags, ceremony safety, facilitator warning signs, and seeker discernment
+- /what-is-a-psychospiritual-crisis.html → definition and explanation page for psychospiritual crisis and spiritual emergency
+- /retreat-safety-checklist.html → practical checklist for screening, containment, escalation, communication, facilitator integrity, and aftercare
+- /what-most-retreat-teams-miss-about-psychospiritual-crisis.html → short source-based article for retreat leaders and facilitators
+- /before-you-sit-with-ayahuasca-or-iboga.html → short source-based article for people evaluating ayahuasca or iboga spaces
+- /resources.html → resource hub linking the main educational pages
+- /contact.html → private readout request page
+
+## Key facts
+- The site is educational and nonclinical.
+- The site does not provide medical care, psychiatric treatment, therapy, medication management, or emergency response.
+- The scorecard is designed to surface hidden gaps in retreat safety, psychospiritual crisis readiness, containment, and aftercare.
+- The participant guide is designed to help people ask better questions before trusting a guide, ceremony, or retreat environment.
+- The resource pages intentionally target search intent around ayahuasca retreat safety, iboga safety, spiritual emergency, facilitator red flags, and retreat screening.
+
+## Canonical entities
+- Before You Sit
+- Stewards of Sanctuary
+- Psychospiritual crisis
+- Spiritual emergency
+- Retreat safety
+- Ayahuasca retreat safety
+- Iboga safety
+- Ceremony safety
+- Participant discernment
