@@ -35,7 +35,6 @@
     button.dataset.copyUrl = shareUrl;
     button.dataset.shareUrl = shareUrl;
   });
-
   const shareNode = document.querySelector('[data-computed-share-url]');
   if (shareNode) shareNode.textContent = shareUrl;
 
@@ -73,50 +72,41 @@
     };
     field.value = map[field.dataset.resultHidden] || '';
   });
-})();
-(function(){
+
   function show(el){ if(el) el.classList.add('show'); }
   function hide(el){ if(el) el.classList.remove('show'); }
   async function postForm(form, successTarget, errorTarget, onSuccess){
     const button=form.querySelector('button[type="submit"]');
     const original=button?button.textContent:'';
     hide(errorTarget); hide(successTarget);
-    if(button){ button.disabled=true; button.textContent='Sending...'; }
+    if(button){ button.disabled=true; button.textContent=form.dataset.loadingText || 'Sending...'; }
     try{
       const response = await fetch(form.action,{method:'POST', body:new FormData(form), headers:{Accept:'application/json'}});
       if(!response.ok) throw new Error('failed');
       show(successTarget);
       if(typeof onSuccess==='function') onSuccess();
-      return true;
+      return false;
     }catch(e){ show(errorTarget); return false; }
     finally{ if(button){ button.disabled=false; button.textContent=original; } }
   }
-  document.addEventListener('DOMContentLoaded',()=>{
-    const unlockForm=document.getElementById('unlock-form');
-    if(unlockForm){
-      unlockForm.addEventListener('submit', async (event)=>{
-        event.preventDefault();
-        const ok = await postForm(unlockForm, document.getElementById('gate-success'), document.getElementById('gate-error'), ()=>{
-          document.querySelectorAll('.breakdown-hidden').forEach((el)=>el.classList.add('show'));
-          const gate=document.querySelector('[data-gate-card]');
-          if(gate) gate.classList.remove('gate-card');
-          unlockForm.style.display='none';
-          const map={first_name:unlockForm.querySelector('[name="first_name"]')?.value||'', name:unlockForm.querySelector('[name="first_name"]')?.value||'', email:unlockForm.querySelector('[name="email"]')?.value||'', role:unlockForm.querySelector('[name="role"]')?.value||'', organization:unlockForm.querySelector('[name="organization"]')?.value||''};
-          try{ localStorage.setItem('bysLead', JSON.stringify(Object.assign({}, JSON.parse(localStorage.getItem('bysLead')||'{}'), map))); }catch(e){}
-          document.querySelectorAll('[data-autofill]').forEach((field)=>{ const key=field.dataset.autofill; if(!field.value && map[key]) field.value=map[key]; if(!field.value && key==='name' && map.first_name) field.value=map.first_name; });
-          const target=document.querySelector('.breakdown-hidden.show'); if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-        });
-        return ok;
-      }, {capture:true});
+
+  window.BYSResults = {
+    unlock(event, form){
+      if(event) event.preventDefault();
+      return postForm(form, document.getElementById('gate-success'), document.getElementById('gate-error'), ()=>{
+        document.querySelectorAll('.breakdown-hidden').forEach((el)=>el.classList.add('show'));
+        const gate=document.querySelector('[data-gate-card]');
+        if(gate) gate.classList.remove('gate-card');
+        form.style.display='none';
+        const map={first_name:form.querySelector('[name="first_name"]')?.value||'', name:form.querySelector('[name="first_name"]')?.value||'', email:form.querySelector('[name="email"]')?.value||'', role:form.querySelector('[name="role"]')?.value||'', organization:form.querySelector('[name="organization"]')?.value||''};
+        try{ localStorage.setItem('bysLead', JSON.stringify(Object.assign({}, JSON.parse(localStorage.getItem('bysLead')||'{}'), map))); }catch(e){}
+        document.querySelectorAll('[data-autofill]').forEach((field)=>{ const key=field.dataset.autofill; if(!field.value && map[key]) field.value=map[key]; if(!field.value && key==='name' && map.first_name) field.value=map.first_name; });
+        const target=document.querySelector('.breakdown-hidden.show'); if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    },
+    outsideRead(event, form){
+      if(event) event.preventDefault();
+      return postForm(form, document.getElementById('readout-success'), document.getElementById('readout-error'), ()=>{ form.style.display='none'; });
     }
-    const readForm=document.getElementById('outside-read-form');
-    if(readForm){
-      readForm.addEventListener('submit', async (event)=>{
-        event.preventDefault();
-        await postForm(readForm, document.getElementById('readout-success'), document.getElementById('readout-error'), ()=>{
-          readForm.style.display='none';
-        });
-      }, {capture:true});
-    }
-  });
+  };
 })();
