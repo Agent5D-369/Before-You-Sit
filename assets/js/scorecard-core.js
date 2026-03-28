@@ -95,3 +95,4 @@ const SCORECARD = (() => {
 
   return { config, sanitizeValues, decodeAnswers, encodeAnswers, analyze, status };
 })();
+window.SCORECARD = SCORECARD;
