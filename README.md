@@ -11,7 +11,7 @@ A mobile-first static lead-capture site built for GitHub Pages.
 
 ## Forms
 All forms post to the same Formspree endpoint:
-`https://formspree.io/f/xqegaqqq`
+`https://formspree.io/f/xvzvzabe`
 
 Different flows are segmented with hidden fields like `form_type`, `result_bucket`, and `score_total`.
 
