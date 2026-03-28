@@ -42,6 +42,7 @@
     });
   });
 
+  document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-ajax-form]').forEach((form) => {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -95,6 +96,7 @@
       }
     });
   });
+});
 })();
 
 (function(){
