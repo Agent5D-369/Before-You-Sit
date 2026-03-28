@@ -1,3 +1,4 @@
+
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('[data-scorecard-form]');
@@ -31,6 +32,15 @@
         progressBar.setAttribute('aria-valuenow', String(percent));
       }
       if (progressCopy) progressCopy.textContent = `${answered} of ${questionNames.length} answered`;
+      return answered;
+    }
+
+    function focusQuestion(index) {
+      const activeCard = questionCards[index];
+      if (!activeCard) return;
+      const heading = activeCard.querySelector('h3');
+      if (heading) heading.focus?.();
+      activeCard.scrollIntoView({behavior:'smooth', block:'start'});
     }
 
     function showQuestion(index) {
@@ -45,8 +55,7 @@
       const onLast = currentIndex === questionCards.length - 1;
       if (nextButton) nextButton.hidden = onLast;
       if (submitButton) submitButton.hidden = !onLast;
-      const activeCard = questionCards[currentIndex];
-      if (activeCard) activeCard.scrollIntoView({behavior:'smooth', block:'start'});
+      focusQuestion(currentIndex);
     }
 
     function clearMissingState(target) {
@@ -62,7 +71,7 @@
         const card = this.closest('.question-card');
         const idx = questionCards.indexOf(card);
         if (idx >= 0 && idx < questionCards.length - 1) {
-          setTimeout(() => showQuestion(idx + 1), 120);
+          setTimeout(() => showQuestion(idx + 1), 100);
         } else {
           showQuestion(questionCards.length - 1);
         }
@@ -103,6 +112,6 @@
 
     updateProgress();
     showQuestion(0);
-    window.addEventListener('pageshow', function(){ updateProgress(); showQuestion(currentIndex); });
+    window.addEventListener('pageshow', function(){ updateProgress(); });
   });
 })();

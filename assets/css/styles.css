@@ -290,3 +290,230 @@ article h2 a:hover{text-decoration:underline;}
 .keyword-chip{padding:.42rem .72rem!important;font-size:.84rem!important}
 .hero-proof .proof-chip{line-height:1.45!important}
 form[style*='display: none'] + .contact-note{display:none}
+
+
+/* v14 final readability and layout overrides */
+
+:root{
+  --page-max: 1200px;
+}
+.container{width:min(var(--page-max), calc(100% - 2rem));}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  padding:.42rem .78rem;
+  font-size:.82rem;
+  line-height:1.15;
+  letter-spacing:0;
+  margin:0 0 1rem 0 !important;
+}
+.question-card .eyebrow,
+.section-heading .eyebrow,
+.result-card .eyebrow,
+.lead-block .eyebrow,
+.resource-hero .eyebrow,
+.contact-hero .eyebrow,
+.hero-copy .eyebrow{margin-bottom:1rem !important;}
+.hero{
+  padding:3.5rem 0 2.75rem;
+}
+.hero-grid{
+  grid-template-columns:minmax(0,1.28fr) minmax(280px,.72fr) !important;
+  gap:2.4rem !important;
+  align-items:center !important;
+}
+.hero-copy h1{
+  max-width:11ch !important;
+  font-size:clamp(2.8rem,5.3vw,5rem) !important;
+  line-height:.96 !important;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.hero-copy p{
+  max-width:38rem !important;
+  font-size:1.06rem !important;
+  line-height:1.58 !important;
+}
+.hero-visual{
+  max-width:430px !important;
+  width:100%;
+  aspect-ratio:4/5 !important;
+  justify-self:end;
+}
+.hero-visual img{
+  object-fit:cover;
+  object-position:center center;
+}
+.visual-caption{font-size:.92rem;line-height:1.55;}
+.hero-actions{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  align-items:start;
+  margin-top:1.4rem;
+}
+.cta-stack{min-width:0;}
+.cta-note{
+  margin:.8rem 0 0;
+  color:var(--text-soft);
+  line-height:1.5;
+}
+.button,.button-secondary{
+  min-height:56px;
+  width:100%;
+  justify-content:center;
+}
+.button-participant{
+  background:linear-gradient(180deg,#256f73,#184f55) !important;
+  color:#f3fbfa !important;
+  border:1px solid rgba(135,229,216,.28) !important;
+}
+.button-participant:hover{background:linear-gradient(180deg,#2d8687,#1b5e63) !important;}
+.keyword-chip-row{margin-top:1.15rem;}
+.keyword-chip{
+  padding:.5rem .8rem;
+  font-size:.92rem;
+}
+.hero-proof{
+  margin-top:1.35rem;
+  grid-template-columns:1fr;
+}
+.proof-chip,.metric,.surface-card,.question-card,.result-card,.form-card,.lead-block,.quiz-sidebar,.cta-band{
+  padding:1.25rem !important;
+}
+.scorecard-intro-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
+  gap:1.6rem;
+  align-items:start;
+  margin-bottom:1.25rem;
+}
+.section-heading.scorecard-intro{max-width:52rem;}
+.section-heading.scorecard-intro h1{
+  max-width:12ch !important;
+  font-size:clamp(2.55rem,4.8vw,4.55rem) !important;
+  line-height:.98 !important;
+}
+.section-heading.scorecard-intro p{max-width:42rem !important; line-height:1.58;}
+.quiz-layout{
+  grid-template-columns:300px minmax(0,1fr) !important;
+  gap:1.5rem !important;
+  align-items:start;
+}
+.quiz-sidebar{top:5rem;}
+.question-card{
+  margin-top:0 !important;
+  padding:1.2rem !important;
+}
+.question-card h3{
+  font-size:1.24rem !important;
+  line-height:1.36 !important;
+  max-width:58rem;
+  margin:0 0 .45rem;
+}
+.question-card p{
+  font-size:.97rem !important;
+  line-height:1.55 !important;
+  margin:0 0 1rem !important;
+}
+.scale-grid{gap:.7rem;}
+.scale-option{
+  padding:1rem 1rem;
+  gap:.85rem;
+}
+.scale-option strong{font-size:1rem; line-height:1.35;}
+.scale-option span{font-size:.94rem; line-height:1.5;}
+.wizard-nav{
+  display:flex;
+  gap:.85rem;
+  margin-top:1rem;
+  align-items:center;
+}
+.wizard-nav .button,.wizard-nav .button-secondary,.wizard-nav .button-ghost{
+  width:auto;
+  min-width:160px;
+}
+.result-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:1.5rem;}
+.result-hero h1,.contact-hero h1,.lead-block h2{
+  font-size:clamp(2.15rem,4vw,3.5rem) !important;
+  line-height:1.02 !important;
+  max-width:14ch;
+}
+.result-hero p,.contact-hero p,.lead-block p{line-height:1.6; max-width:42rem;}
+.field-grid.two{grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem;}
+.field{margin-bottom:.9rem;}
+.field input,.field textarea,.field select{
+  padding:1rem 1rem;
+  font-size:1rem;
+  line-height:1.45;
+}
+.form-card form{margin-top:.35rem;}
+.form-card .button{width:auto; min-width:220px;}
+.footer-grid{
+  grid-template-columns:minmax(0,1.35fr) minmax(0,.95fr) !important;
+  gap:1.5rem !important;
+  align-items:start;
+}
+.footer-links{
+  display:flex !important;
+  flex-wrap:wrap;
+  gap:.85rem 1.2rem;
+  align-content:flex-start;
+  justify-content:flex-end;
+}
+.footer-links a{white-space:nowrap;}
+.footer-note{max-width:42rem; line-height:1.55;}
+.footer-attribution{margin-top:1rem; color:var(--text-muted);}
+.footer-attribution a{color:var(--text);}
+.notice, .small-note{line-height:1.55;}
+@media (max-width: 1039px){
+  .hero-grid,
+  .scorecard-intro-grid,
+  .quiz-layout,
+  .result-grid,
+  .two-grid,
+  .resource-grid,
+  .footer-grid,
+  .guide-grid,
+  .results-breakdown{
+    grid-template-columns:1fr !important;
+  }
+  .hero-visual{
+    max-width:100% !important;
+    justify-self:stretch;
+    order:2;
+  }
+  .hero-copy h1{max-width:11.5ch !important; font-size:clamp(2.7rem,10vw,4.4rem) !important;}
+  .hero-actions{grid-template-columns:1fr;}
+  .section-heading.scorecard-intro h1{max-width:11.5ch !important; font-size:clamp(2.4rem,11vw,3.8rem) !important;}
+  .quiz-sidebar{position:relative; top:auto;}
+  .field-grid.two{grid-template-columns:1fr;}
+  .footer-links{justify-content:flex-start;}
+}
+@media (max-width: 719px){
+  .container{width:min(var(--page-max), calc(100% - 1.25rem));}
+  .hero{padding:2.35rem 0 2rem;}
+  .hero-copy h1,
+  .section-heading.scorecard-intro h1,
+  .result-hero h1,
+  .contact-hero h1,
+  .lead-block h2,
+  .resource-hero h1,
+  .section-heading h2{
+    font-size:clamp(2.15rem,12vw,3.15rem) !important;
+    max-width:12ch !important;
+    line-height:1.03 !important;
+  }
+  .hero-copy p,
+  .section-heading.scorecard-intro p,
+  .resource-hero p,
+  .result-hero p,
+  .contact-hero p,
+  .lead-block p,
+  .section-heading p{font-size:1rem !important; max-width:100% !important;}
+  .proof-chip,.metric,.surface-card,.question-card,.result-card,.form-card,.lead-block,.quiz-sidebar,.cta-band{padding:1rem !important;}
+  .eyebrow{margin-bottom:.85rem !important;}
+  .wizard-nav{flex-wrap:wrap;}
+  .wizard-nav .button,.wizard-nav .button-secondary,.wizard-nav .button-ghost{width:100%;}
+  .form-card .button{width:100%;}
+}
