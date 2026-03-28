@@ -59,16 +59,21 @@
         const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
         if (!response.ok) throw new Error('Failed');
         if (successTarget) successTarget.classList.add('show');
-        form.reset();
+        if (form.dataset.hideFormOnSuccess === 'true') form.style.display = 'none';
         if (form.dataset.onSuccess === 'reveal-results') {
           document.querySelectorAll('.breakdown-hidden').forEach((el) => el.classList.add('show'));
           const gate = document.querySelector('[data-gate-card]');
           if (gate) gate.classList.remove('gate-card');
           const contact = document.getElementById('private-readout');
           if (contact) contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          form.style.display = 'none';
         } else if (form.dataset.onSuccess === 'redirect' && form.dataset.redirectUrl) {
           window.location.href = form.dataset.redirectUrl;
           return;
+        } else if (form.dataset.onSuccess === 'message-only') {
+          form.style.display = 'none';
+        } else if (form.dataset.hideFormOnSuccess !== 'true') {
+          form.reset();
         }
       } catch (_) {
         if (errorTarget) errorTarget.classList.add('show');
@@ -76,5 +81,37 @@
         if (button) { button.disabled = false; button.textContent = original; }
       }
     });
+  });
+})();
+
+(function(){
+  const STORAGE_KEY = 'bysLead';
+  function readStore(){
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e){ return {}; }
+  }
+  function writeStore(data){
+    const current = readStore();
+    const next = Object.assign({}, current, data);
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); } catch(e){}
+  }
+  function captureFormData(form){
+    const fd = new FormData(form);
+    writeStore({
+      first_name: String(fd.get('first_name') || '').trim(),
+      name: String(fd.get('name') || fd.get('first_name') || '').trim(),
+      email: String(fd.get('email') || '').trim(),
+      role: String(fd.get('role') || '').trim(),
+      organization: String(fd.get('organization') || '').trim()
+    });
+  }
+  document.querySelectorAll('form[data-ajax-form]').forEach((form)=>{
+    form.addEventListener('submit', ()=> captureFormData(form), true);
+  });
+  const stored = readStore();
+  document.querySelectorAll('[data-autofill]').forEach((field)=>{
+    const key = field.dataset.autofill;
+    if (!field.value && stored[key]) field.value = stored[key];
+    if (!field.value && key === 'name' && stored.first_name) field.value = stored.first_name;
+    if (!field.value && key === 'first_name' && stored.name) field.value = stored.name;
   });
 })();
