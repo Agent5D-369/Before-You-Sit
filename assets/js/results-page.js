@@ -1,24 +1,44 @@
 (function () {
   const page = document.querySelector('[data-result-page]');
   if (!page || !window.SCORECARD) return;
+
   const expected = page.dataset.resultPage;
   const params = new URLSearchParams(window.location.search);
   const answers = SCORECARD.decodeAnswers(params.get('a'));
-  if (!answers) { window.location.href = 'scorecard.html'; return; }
+  if (!answers) {
+    window.location.href = 'scorecard.html';
+    return;
+  }
+
   const analysis = SCORECARD.analyze(answers);
+  if (!analysis) {
+    window.location.href = 'scorecard.html';
+    return;
+  }
+
   if (analysis.bucket.key !== expected) {
-    const redirectParams = new URLSearchParams({ a: SCORECARD.encodeAnswers(answers), t: String(analysis.total), gaps: analysis.topGaps.join(',') });
+    const redirectParams = new URLSearchParams({
+      a: SCORECARD.encodeAnswers(answers),
+      t: String(analysis.total),
+      gaps: analysis.topGaps.join(',')
+    });
     window.location.replace(`${analysis.bucket.file}?${redirectParams.toString()}`);
     return;
   }
-  document.querySelectorAll('[data-score-total]').forEach((node) => node.textContent = `${analysis.total}/60`);
-  const shareUrl = `${window.location.origin}${window.location.pathname}?a=${SCORECARD.encodeAnswers(answers)}&t=${analysis.total}&gaps=${analysis.topGaps.join(',')}`;
+
+  document.querySelectorAll('[data-score-total]').forEach((node) => {
+    node.textContent = `${analysis.total}/60`;
+  });
+
+  const shareUrl = `${window.location.origin || ''}${window.location.pathname}?a=${SCORECARD.encodeAnswers(answers)}&t=${analysis.total}&gaps=${analysis.topGaps.join(',')}`;
   document.querySelectorAll('[data-copy-url], [data-share-url]').forEach((button) => {
     button.dataset.copyUrl = shareUrl;
     button.dataset.shareUrl = shareUrl;
   });
+
   const shareNode = document.querySelector('[data-computed-share-url]');
   if (shareNode) shareNode.textContent = shareUrl;
+
   const gapList = document.querySelector('[data-gap-list]');
   if (gapList) {
     gapList.innerHTML = '';
@@ -29,6 +49,7 @@
       gapList.appendChild(span);
     });
   }
+
   const categoryList = document.querySelector('[data-category-list]');
   if (categoryList) {
     categoryList.innerHTML = '';
@@ -39,6 +60,7 @@
       categoryList.appendChild(item);
     });
   }
+
   document.querySelectorAll('[data-result-hidden]').forEach((field) => {
     const map = {
       score_total: analysis.total,
