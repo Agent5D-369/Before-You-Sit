@@ -517,3 +517,86 @@ form[style*='display: none'] + .contact-note{display:none}
   .wizard-nav .button,.wizard-nav .button-secondary,.wizard-nav .button-ghost{width:100%;}
   .form-card .button{width:100%;}
 }
+
+
+/* v15 readability and layout audit pass */
+:root{--hero-copy-max:43rem;--measure-tight:34rem}
+.site-header{backdrop-filter:blur(10px)}
+.hero-grid{align-items:stretch!important;grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr)!important;gap:3rem!important}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.hero-copy h1{font-size:clamp(2.9rem,4.5vw,4.7rem)!important;max-width:11.3ch!important;line-height:.97!important;letter-spacing:-.035em!important;text-wrap:balance}
+.hero-copy p{max-width:var(--hero-copy-max)!important;font-size:1.06rem!important;line-height:1.52!important}
+.hero-visual{justify-self:stretch!important;align-self:stretch!important;max-width:none!important;width:100%!important;min-height:760px!important;aspect-ratio:auto!important}
+.hero-visual img{width:100%!important;height:100%!important;display:block;object-fit:cover!important;object-position:center center!important}
+.hero-visual .visual-caption{padding:1rem 1.2rem 1.2rem!important;line-height:1.45}
+.hero-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1rem 1rem!important;align-items:start!important;margin-top:1.5rem!important}
+.cta-stack{display:flex;flex-direction:column;gap:.75rem;min-width:0}
+.cta-stack .button,.cta-stack .button-secondary{width:100%;justify-content:center;min-height:3.55rem;padding-inline:1.1rem!important;text-align:center}
+.cta-note{font-size:.98rem!important;line-height:1.5!important;max-width:none!important;padding-inline:.1rem;color:var(--text-soft)}
+.keyword-chip-row.compact{margin-top:1.25rem!important;gap:.65rem!important}
+.keyword-chip{padding:.45rem .8rem!important;font-size:.86rem!important;line-height:1.25!important}
+.hero-proof{grid-template-columns:1fr!important;gap:.8rem!important;margin-top:1.2rem!important}
+.proof-chip{padding:1rem 1.05rem!important;font-size:.96rem!important;line-height:1.5!important}
+.eyebrow{display:inline-flex;align-items:center;padding:.42rem .78rem!important;font-size:.84rem!important;line-height:1.2!important;margin-bottom:1rem!important}
+.question-card .eyebrow,.lead-block .eyebrow,.result-card .eyebrow,.section-heading .eyebrow,.resource-hero .eyebrow,.contact-hero .eyebrow,.scorecard-intro .eyebrow{margin-bottom:.95rem!important}
+.section-heading h2,.lead-block h2,.result-card h2,.contact-hero h1,.resource-hero h1{line-height:1.05!important;text-wrap:balance}
+.section-heading p,.lead-block p,.result-card p,.contact-hero p,.resource-hero p,.footer-note,.small-note{line-height:1.55!important}
+.scorecard-intro-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:1.6rem;align-items:start;margin-bottom:1.5rem}
+.scorecard-intro h1{max-width:11ch!important;font-size:clamp(2.7rem,4.4vw,4.35rem)!important;line-height:.98!important;margin-top:0!important}
+.scorecard-intro p{max-width:44rem!important}
+.scorecard-intro-card{max-width:none!important}
+.quiz-layout{grid-template-columns:300px minmax(0,1fr)!important;gap:1.4rem!important;align-items:start}
+.quiz-sidebar{padding:1.2rem!important}
+.quiz-sidebar .eyebrow{margin-bottom:.75rem!important}
+.progress-track{margin:.9rem 0 .8rem!important}
+.question-card{padding:1.2rem!important}
+.question-card h3{font-size:1.22rem!important;line-height:1.35!important;margin:0 0 .5rem!important;max-width:32ch}
+.question-card p{font-size:.98rem!important;line-height:1.5!important;margin:0 0 1rem!important}
+.scale-grid{gap:.7rem!important}
+.scale-option{padding:1rem 1rem!important;gap:.85rem!important}
+.scale-option strong{font-size:1rem!important;line-height:1.35!important}
+.scale-option span{font-size:.94rem!important;line-height:1.48!important}
+.resource-grid,.result-grid,.contact-hero .two-grid,.two-grid{align-items:start;gap:1.8rem!important}
+.resource-hero h1{font-size:clamp(2.7rem,4.6vw,4.4rem)!important;margin-top:0!important;max-width:10.5ch!important}
+.resource-hero p,.contact-hero p,.result-hero p{max-width:42rem!important}
+.form-card{padding:1.5rem!important}
+.form-card .field-grid.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem!important}
+.field{margin-bottom:.95rem}
+.field label{margin-bottom:.45rem!important;line-height:1.35}
+.field input,.field textarea,.field select{padding:1rem 1rem!important;font-size:1rem!important;line-height:1.5!important}
+.field textarea{min-height:190px}
+.success-banner,.error-banner{margin-bottom:1rem!important;line-height:1.45}
+.form-card.has-success form{display:none!important}
+.footer-grid{grid-template-columns:1.15fr .85fr!important;gap:1.5rem!important;align-items:start!important}
+.footer-links{display:flex!important;flex-wrap:wrap!important;justify-content:flex-end!important;gap:.55rem 1rem!important;align-content:flex-start!important}
+.footer-links a{font-size:.9rem!important;line-height:1.45!important}
+.footer-note{max-width:46rem!important}
+.footer-attribution{margin-top:.9rem!important}
+.footer-attribution a{text-decoration:underline;text-underline-offset:2px}
+
+@media (max-width: 1039px){
+  .hero-grid{grid-template-columns:1fr!important;gap:1.5rem!important}
+  .hero-copy h1{max-width:10.6ch!important;font-size:clamp(2.7rem,8.8vw,4.2rem)!important}
+  .hero-copy p{max-width:100%!important}
+  .hero-visual{min-height:520px!important;max-width:100%!important;order:2}
+  .hero-actions{grid-template-columns:1fr 1fr!important}
+  .scorecard-intro-grid,.quiz-layout,.resource-grid,.result-grid,.contact-hero .two-grid,.two-grid,.footer-grid{grid-template-columns:1fr!important}
+  .footer-links{justify-content:flex-start!important}
+}
+@media (max-width: 720px){
+  .hero{padding-top:2rem!important}
+  .hero-copy h1{max-width:9.6ch!important;font-size:clamp(2.45rem,12vw,3.5rem)!important;line-height:1!important}
+  .hero-copy p{font-size:1rem!important;line-height:1.55!important}
+  .hero-actions{grid-template-columns:1fr!important;gap:.9rem!important}
+  .cta-stack .button,.cta-stack .button-secondary{min-height:3.3rem!important}
+  .hero-visual{min-height:420px!important}
+  .eyebrow{margin-bottom:.82rem!important;font-size:.8rem!important;padding:.36rem .66rem!important}
+  .question-card .eyebrow,.lead-block .eyebrow,.result-card .eyebrow,.section-heading .eyebrow,.resource-hero .eyebrow,.contact-hero .eyebrow,.scorecard-intro .eyebrow{margin-bottom:.8rem!important}
+  .keyword-chip-row.compact{gap:.55rem!important}
+  .keyword-chip{font-size:.82rem!important}
+  .proof-chip,.metric,.surface-card,.question-card,.result-card,.form-card,.lead-block,.quiz-sidebar{padding:1rem!important}
+  .question-card h3{font-size:1.14rem!important;max-width:none!important}
+  .form-card .field-grid.two{grid-template-columns:1fr!important}
+  .field textarea{min-height:160px}
+  .footer-links{gap:.45rem .75rem!important}
+}

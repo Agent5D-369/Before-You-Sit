@@ -59,19 +59,19 @@
         const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
         if (!response.ok) throw new Error('Failed');
         if (successTarget) successTarget.classList.add('show');
-        if (form.dataset.hideFormOnSuccess === 'true') form.style.display = 'none';
+        if (form.dataset.hideFormOnSuccess === 'true') { form.style.display = 'none'; const card = form.closest('.form-card'); if (card) card.classList.add('has-success'); const card = form.closest('.form-card'); if (card) card.classList.add('has-success'); }
         if (form.dataset.onSuccess === 'reveal-results') {
           document.querySelectorAll('.breakdown-hidden').forEach((el) => el.classList.add('show'));
           const gate = document.querySelector('[data-gate-card]');
           if (gate) gate.classList.remove('gate-card');
           const contact = document.getElementById('private-readout');
           if (contact) contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          form.style.display = 'none';
+          form.style.display = 'none'; const card = form.closest('.form-card'); if (card) card.classList.add('has-success');
         } else if (form.dataset.onSuccess === 'redirect' && form.dataset.redirectUrl) {
           window.location.href = form.dataset.redirectUrl;
           return;
         } else if (form.dataset.onSuccess === 'message-only') {
-          form.style.display = 'none';
+          form.style.display = 'none'; const card = form.closest('.form-card'); if (card) card.classList.add('has-success');
         } else if (form.dataset.hideFormOnSuccess !== 'true') {
           form.reset();
         }
