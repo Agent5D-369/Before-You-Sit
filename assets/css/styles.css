@@ -600,3 +600,154 @@ form[style*='display: none'] + .contact-note{display:none}
   .field textarea{min-height:160px}
   .footer-links{gap:.45rem .75rem!important}
 }
+
+
+/* v16 layout and readability corrections */
+.eyebrow{
+  width:max-content;
+  max-width:100%;
+  margin:0 0 1.1rem;
+}
+.section-heading .eyebrow,
+.hero-copy .eyebrow,
+.result-hero .eyebrow,
+.contact-hero .eyebrow,
+.resource-hero .eyebrow,
+.scorecard-intro .eyebrow{
+  margin-bottom:1.35rem;
+}
+.hero-copy h1{max-width:9.8ch; line-height:.98;}
+.hero-copy p{max-width:34rem; line-height:1.55;}
+.hero-grid{align-items:stretch;}
+.hero-visual{
+  width:100%;
+  max-width:none;
+  min-height:100%;
+  align-self:stretch;
+  justify-self:stretch;
+  overflow:hidden;
+}
+.hero-visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 50%;
+}
+@media (min-width:1040px){
+  .hero-grid{
+    grid-template-columns:minmax(0,1.12fr) minmax(420px,.88fr)!important;
+    gap:2.5rem!important;
+    align-items:stretch!important;
+  }
+  .hero-copy h1{font-size:clamp(3.2rem,5vw,5.5rem)!important; max-width:10.2ch!important;}
+  .hero-actions{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:1.1rem!important;
+  }
+  .cta-stack{gap:.7rem!important;}
+  .cta-note{max-width:24rem!important;}
+  .hero-visual{min-height:640px; border-radius:30px;}
+}
+.keyword-chip-row{margin-top:1.35rem!important;}
+.section-heading{
+  margin-bottom:1.5rem!important;
+  max-width:56rem;
+}
+.section-heading h2{max-width:18ch; line-height:1.04;}
+.story-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1.15rem!important;
+  align-items:stretch;
+}
+@media (max-width:900px){
+  .story-grid{grid-template-columns:1fr!important;}
+}
+.quiz-layout{
+  grid-template-columns:minmax(0,280px) minmax(0,1fr)!important;
+  gap:1.5rem!important;
+  align-items:start;
+}
+.quiz-sidebar{position:sticky; top:5.5rem;}
+.scorecard-intro-grid{
+  grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+  gap:1.35rem;
+  align-items:start;
+}
+.scorecard-intro{max-width:48rem;}
+.scorecard-intro h1{max-width:10ch; line-height:1.02;}
+.scorecard-intro p{max-width:42rem; line-height:1.55;}
+.question-card .eyebrow{margin-bottom:.75rem!important;}
+.question-card h3{margin-top:0!important; line-height:1.28!important;}
+.question-card p{margin-top:.55rem!important; max-width:58ch;}
+.scale-option strong{display:block; margin-bottom:.2rem;}
+.wizard-nav{
+  grid-template-columns:auto auto 1fr auto;
+  gap:1rem 1.25rem;
+  align-items:center;
+}
+.wizard-step{min-width:92px;}
+.wizard-buttons{display:grid;grid-template-columns:repeat(3,max-content);gap:.8rem;}
+.wizard-note{max-width:34rem; margin:0;}
+.wizard-alt-actions{justify-self:end;}
+.wizard-alt-actions .button-participant{
+  min-height:44px;
+  padding:.82rem 1rem;
+  border-radius:22px;
+  box-shadow:none;
+  background:rgba(35,114,106,.16);
+  border-color:rgba(108,201,181,.28);
+}
+@media (max-width:900px){
+  .wizard-nav{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+  .wizard-buttons{grid-template-columns:repeat(3,minmax(0,1fr)); width:100%;}
+  .wizard-alt-actions{justify-self:start;}
+  .wizard-alt-actions .button-participant{width:auto;}
+}
+@media (max-width:720px){
+  body.quiz-started .scorecard-intro-grid{
+    display:none;
+  }
+  .quiz-layout{
+    grid-template-columns:1fr!important;
+  }
+  .quiz-sidebar{
+    position:static;
+    order:-1;
+  }
+  .hero-actions{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+  }
+  .button, .button-secondary, .button-ghost{
+    width:100%;
+  }
+}
+.footer-grid{
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+  gap:1.5rem!important;
+  align-items:start;
+}
+.footer-links{
+  display:grid!important;
+  grid-template-columns:repeat(3,max-content);
+  gap:.8rem 1.25rem!important;
+  justify-content:end;
+}
+@media (max-width:900px){
+  .footer-grid{grid-template-columns:1fr!important;}
+  .footer-links{grid-template-columns:repeat(2,max-content)!important; justify-content:start;}
+}
+.form-card{padding:1.25rem!important;}
+.field-grid.two{gap:1rem!important;}
+.field textarea{min-height:180px;}
+.result-grid{
+  grid-template-columns:minmax(0,1.03fr) minmax(320px,.97fr)!important;
+  gap:1.5rem!important;
+  align-items:start;
+}
+.result-hero h1{max-width:13ch!important; line-height:1.03!important;}
+.breakdown-hidden .form-card{margin-top:1rem;}
+.success-banner.show{margin-bottom:1rem;}

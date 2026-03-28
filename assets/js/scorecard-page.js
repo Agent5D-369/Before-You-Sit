@@ -32,6 +32,7 @@
         progressBar.setAttribute('aria-valuenow', String(percent));
       }
       if (progressCopy) progressCopy.textContent = `${answered} of ${questionNames.length} answered`;
+      document.body.classList.toggle('quiz-started', answered > 0);
       return answered;
     }
 
