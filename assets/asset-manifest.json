@@ -1,0 +1,32 @@
+{
+  "assets": [
+    {
+      "path": "assets/css/styles.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "assets/js/script.js",
+      "type": "script"
+    },
+    {
+      "path": "assets/images/",
+      "type": "directory"
+    },
+    {
+      "path": "assets/images/bek-atf-desktop.webp",
+      "type": "image"
+    },
+    {
+      "path": "assets/images/bek-atf-mobile.webp",
+      "type": "image"
+    },
+    {
+      "path": "assets/images/bek-og-image.webp",
+      "type": "image"
+    },
+    {
+      "path": "assets/images/bek-book-cover.webp",
+      "type": "image"
+    }
+  ]
+}
