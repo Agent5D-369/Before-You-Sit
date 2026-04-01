@@ -1025,3 +1025,178 @@ body{overflow-x:hidden;}
     font-size:10.5px !important;
   }
 }
+
+.nav-link-tertiary{opacity:.92}.ethos-strip .story-card h3{margin:0 0 .35rem}.fellowship-section .surface-card h3{margin:0 0 .45rem}.footer-links{align-items:flex-start}.summary-block,.lead-block{max-width:none}
+
+
+/* Fellowship brand adaptation */
+:root{
+  --paper:#efe4cf;
+  --paper-soft:#f5ebd8;
+  --paper-line:rgba(72,58,31,.18);
+  --ink:#211a12;
+  --ink-soft:#55493b;
+  --moss:#25311e;
+  --moss-deep:#162018;
+  --moss-card:#4c5528;
+  --moss-card-2:#586132;
+  --gold:#cfa050;
+  --gold-soft:#edd3a3;
+}
+body.theme-fellowship{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(208,160,80,.10), transparent 24%),
+    radial-gradient(circle at 100% 10%, rgba(65,94,46,.22), transparent 24%),
+    linear-gradient(180deg, #0b120f 0%, #101915 100%);
+}
+body.theme-fellowship .site-header{
+  background:rgba(10,16,14,.82);
+  border-bottom:1px solid rgba(212,174,104,.14);
+}
+.hero-dark,.moss-section{
+  position:relative;
+  background:
+    linear-gradient(180deg, rgba(7,13,10,.92) 0%, rgba(13,23,18,.94) 100%);
+}
+.textured-dark::before,.moss-section::before,.hero-dark::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(214,171,92,.10), transparent 18%),
+    radial-gradient(circle at 85% 30%, rgba(84,104,54,.18), transparent 20%),
+    repeating-linear-gradient(90deg, rgba(96,121,61,.06) 0 22px, rgba(0,0,0,0) 22px 88px);
+  opacity:.7;
+  pointer-events:none;
+}
+.hero-dark > .container,.moss-section > .container,.paper-section > .container{position:relative;z-index:1;}
+.paper-section{
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255,255,255,.28), transparent 28%),
+    linear-gradient(180deg, var(--paper-soft) 0%, var(--paper) 100%);
+  color:var(--ink);
+  border-top:1px solid rgba(63,48,27,.08);
+  border-bottom:1px solid rgba(63,48,27,.08);
+}
+.paper-section h1,.paper-section h2,.paper-section h3,.paper-section .brand-title,.paper-section strong{color:var(--ink);}
+.paper-section p,.paper-section li,.paper-section .small-note,.paper-section .footer-note,.paper-section .visual-caption,.paper-section .metric span{color:var(--ink-soft);}
+.paper-section .eyebrow{
+  background:rgba(207,160,80,.10);
+  color:#6e5121;
+  border-color:rgba(110,81,33,.18);
+}
+.paper-section .button-participant,.paper-section .button-secondary{
+  background:linear-gradient(180deg, #4a5a2c, #39451f);
+  color:#f7eed7;
+  border-color:rgba(238,215,168,.2);
+}
+.paper-section .proof-chip,.paper-section .metric,.paper-section .story-card,.paper-section .bucket-card,
+.paper-section .guide-card,.paper-section .testimonial-card,.paper-section .faq-card,.paper-section .surface-card,
+.paper-section .question-card,.paper-section .result-card,.paper-section .form-card,.paper-section .lead-block,
+.paper-section .quiz-sidebar,.paper-section .cta-band{
+  background:linear-gradient(180deg, rgba(92,102,50,.96), rgba(74,83,39,.98));
+  color:#f7efdb;
+  border-color:rgba(248,229,186,.16);
+  box-shadow:0 16px 38px rgba(33,26,18,.12);
+}
+.paper-section .story-card p,.paper-section .bucket-card p,.paper-section .guide-card p,.paper-section .faq-card p,
+.paper-section .testimonial-card p,.paper-section .surface-card p,.paper-section .metric span,.paper-section .footer-note,
+.paper-section .small-note,.paper-section .proof-chip,.paper-section .tag{
+  color:#f3ead5;
+}
+.paper-section .notice{
+  background:rgba(255,247,228,.72);
+  color:var(--ink);
+  border-left-color:#a6782c;
+}
+.theme-fellowship .brand-mark{
+  border-color:rgba(213,173,99,.28);
+  background:linear-gradient(145deg, rgba(207,160,80,.18), rgba(207,160,80,.05));
+}
+.theme-fellowship .nav-link{color:#eadfc8}
+.theme-fellowship .nav-link-tertiary{color:#d7bb8a}
+.theme-fellowship .nav-cta.secondary,.theme-fellowship .button-ghost{
+  border-color:rgba(214,177,109,.22);
+  color:#f2ebdc;
+}
+.theme-fellowship .button,.theme-fellowship .nav-cta.primary{
+  background:linear-gradient(180deg, #dcb56b 0%, #c7973f 100%);
+  color:#1d1810;
+  box-shadow:0 10px 28px rgba(201,151,63,.24);
+}
+.theme-fellowship .button-participant{
+  background:linear-gradient(180deg, #53622f 0%, #3f4c22 100%);
+  color:#f7eed8;
+  border-color:rgba(240,220,177,.18);
+  box-shadow:0 10px 28px rgba(63,76,34,.24);
+}
+.theme-fellowship .button-participant:hover{
+  background:linear-gradient(180deg, #607237 0%, #485729 100%);
+}
+.theme-fellowship .hero-grid{
+  grid-template-columns:minmax(0,1.06fr) minmax(320px,.82fr);
+  align-items:stretch;
+  gap:1.5rem;
+}
+.theme-fellowship .hero-copy h1,.theme-fellowship .section-heading h1{
+  max-width:11.4ch;
+  letter-spacing:-.042em;
+}
+.theme-fellowship .section-heading h2{max-width:14ch}
+.theme-fellowship .hero-proof{gap:1rem}
+.theme-fellowship .proof-chip{border-radius:20px}
+.theme-fellowship .visual-card{
+  border-radius:30px;
+  border-color:rgba(214,173,99,.18);
+  overflow:hidden;
+}
+.theme-fellowship .hero-media .visual-card{
+  height:100%;
+  min-height:620px;
+  background:linear-gradient(180deg, rgba(17,25,19,.9), rgba(17,25,19,.74));
+}
+.theme-fellowship .hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:62% 50%;
+}
+.theme-fellowship .ethos-strip .three-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.theme-fellowship .ethos-strip .story-card,
+.theme-fellowship .summary-section .story-card,
+.theme-fellowship .fellowship-callout .surface-card{
+  border-radius:26px;
+}
+.theme-fellowship .footer{
+  background:#11110f;
+  border-top:1px solid rgba(212,173,99,.14);
+}
+.theme-fellowship .footer a{color:#eadfc8}
+.theme-fellowship .footer-note{max-width:56ch}
+.theme-fellowship .fellowship-callout .surface-card{
+  background:
+    linear-gradient(180deg, rgba(86,98,51,.96), rgba(66,74,37,.98));
+}
+.theme-fellowship .fellowship-callout .button-secondary{
+  background:linear-gradient(180deg, #dcb56b 0%, #c7973f 100%);
+  color:#20160c;
+  border-color:transparent;
+}
+.theme-fellowship .scorecard-shell .question-card,
+.theme-fellowship .scorecard-shell .quiz-sidebar{
+  border-color:rgba(214,173,99,.18);
+}
+.theme-fellowship .scorecard-shell .scale-option:hover,
+.theme-fellowship .scorecard-shell .scale-option:focus-within{
+  border-color:rgba(214,173,99,.34);
+  background:rgba(214,173,99,.05);
+}
+.theme-fellowship .resource-hero h1,.theme-fellowship .contact-hero h1,.theme-fellowship .result-hero h1{
+  max-width:12ch;
+}
+@media (max-width: 960px){
+  .theme-fellowship .hero-grid{grid-template-columns:1fr}
+  .theme-fellowship .hero-media .visual-card{min-height:440px}
+  .theme-fellowship .ethos-strip .three-grid{grid-template-columns:1fr}
+}

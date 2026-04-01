@@ -22,3 +22,5 @@ Forms: Formspree
 Fonts: Inter + Fraunces
 Structured data: Organization, WebSite, WebPage, FAQPage
 LLM support: llms.txt, crawlable HTML, semantic headings, internal linking
+
+Community: The Fellowship — https://the-fellowship-bf2ddd.circle.so/

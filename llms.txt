@@ -61,3 +61,8 @@ Before You Sit is an educational platform focused on psychospiritual crisis read
 - Scorecard: a diagnostic for retreat founders, facilitators, support leads, and operations people.
 - Before You Sit: a participant decision guide for choosing a ceremony, retreat, guide, or medicine space.
 - Contact: a grounded outside-view request page for naming what kind of problem the user is likely looking at.
+
+
+Ecosystem:
+- Before You Sit is the public-facing offering.
+- The Fellowship is the community path around safety, guardianship, and discernment: https://the-fellowship-bf2ddd.circle.so/
