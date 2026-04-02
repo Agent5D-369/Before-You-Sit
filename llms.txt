@@ -58,7 +58,7 @@ Before You Sit is an educational platform focused on psychospiritual crisis read
 
 ## Plain-language summaries
 - Homepage: two clear paths, one for the people running the room and one for the people deciding whether to enter it.
-- Scorecard: a diagnostic for retreat founders, facilitators, support leads, and operations people.
+- Readiness check: a diagnostic for retreat founders, facilitators, support leads, and operations people.
 - Before You Sit: a participant decision guide for choosing a ceremony, retreat, guide, or medicine space.
 - Contact: a grounded outside-view request page for naming what kind of problem the user is likely looking at.
 
